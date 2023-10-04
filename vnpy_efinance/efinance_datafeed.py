@@ -119,7 +119,7 @@ class EfinanceDatafeed(BaseDatafeed):
         datafeed = to_ef_quote(exchange)
 
         try:
-            d1: DataFrame = datafeed.get_quote_history(symbol, beg=start, end=end, klt=ef_interval)
+            d1: DataFrame = datafeed.get_quote_history(ef_symbol, beg=start, end=end, klt=ef_interval)
         except IOError as ex:
             output(f"发生输入/输出错误：{ex}")
             return []

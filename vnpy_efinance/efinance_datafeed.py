@@ -61,7 +61,7 @@ def to_ef_symbol(symbol, exchange) -> Optional[str]:
         ts_symbol: str = f"{symbol}"
     # 期货
     elif exchange in FUTURE_LIST:
-        ts_symbol: str = f"{symbol}.{EXCHANGE_VT2EF[exchange]}".lower()
+        ts_symbol: str = f"{EXCHANGE_VT2EF[exchange]}.{symbol}".lower()
     else:
         return None
 
